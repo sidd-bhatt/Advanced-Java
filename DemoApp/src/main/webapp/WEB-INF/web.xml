@@ -3,7 +3,7 @@
  
   <servlet>
   	<servlet-name>abc</servlet-name>
-  	<servlet-class>com.mathOps.AddServlet</servlet-class>  
+  	<servlet-class>com.mathOps.AdditionServlet</servlet-class>  
   </servlet>
   
   <servlet-mapping>
