@@ -5,12 +5,15 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 //as soon as we extend the class to HttpServlet the class become Servlet
+
+@WebServlet("/add")//instead of writing in web.xml we can simply use annotations
 public class AdditionServlet extends HttpServlet 
 {
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException
