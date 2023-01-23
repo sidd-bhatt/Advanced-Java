@@ -17,5 +17,20 @@
 	int k=i+j;
 	out.println("Sum is "+k);// we get 'out' automatically by web container.
 	%>
+	
+<!-- Servlets cannot run JSP -->
+<!--We cannot run JSP file directly, but we can run Servlet using Tomcat(that's why tomcat is also called
+Servlet container) -->
+<!-- So basically when we run, say, add.jsp file, it gets converted into add_jsp.java file by 
+Web Container implicitly and all the java code within .jsp file will be kind of copy pasted into
+a servlet inside the add_jsp.java file(that is the reason we automatically get the objects in .jsp files.)-->
+
+<%--JSP DIrective:
+ 1.@page: 
+ 	<%@page attribute="value" attribute="value"... %>
+ 2.@include
+ 3.@taglib --%>
+
+
 </body>
 </html>
