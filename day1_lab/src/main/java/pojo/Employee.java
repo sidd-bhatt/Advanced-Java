@@ -30,10 +30,9 @@ public class Employee {
 		
 	}
 	
-	public Employee(Long id, String firstname, String lastname, Department dept, double salary, LocalDate dob,
+	public Employee(String firstname, String lastname, Department dept, double salary, LocalDate dob,
 			boolean isPermanent) {
 		super();
-		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.dept = dept;

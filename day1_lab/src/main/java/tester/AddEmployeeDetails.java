@@ -20,8 +20,8 @@ public class AddEmployeeDetails {
 			// create user dao instance
 			EmployeeDao empDao=new EmployeeDaoImpl();
 			System.out.println(
-					"Enter user details :  firstName,  lastName,  email,  password,  confirmPassword,  userRole, regAmount, regDate(yr-mon-day) ");
-			Employee employee = new Employee(sc.nextLong(),sc.next(),sc.next(),Department.valueOf(sc.next()), sc.nextDouble(), LocalDate.parse(sc.next()), sc.nextBoolean());
+					"Enter user details :  firstName,  lastName,  role, regAmount, regDate(yr-mon-day), Permanant? ");
+			Employee employee=new Employee(sc.next(), sc.next(), Department.valueOf(sc.next()), sc.nextDouble(), LocalDate.parse(sc.next()), sc.nextBoolean());
 			//invoke dao's method
 			System.out.println(empDao.addEmpDetails(employee));
 		} 

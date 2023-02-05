@@ -1,7 +1,9 @@
 package dao;
 import org.hibernate.*;
 
+import java.util.List;
 import pojo.Employee;
+import utils.Department;
 
 import static utils.HibernateUtils.getFactory;
 
@@ -41,5 +43,35 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		}
 		return message;
 	}
-
+	public List<Employee> getEmpByDept(Department dept, double minSal){
+		List<Employee> empList= null;
+		String jpql="select e from emps e where e.dept=:department";
+		Session session=getFactory().getCurrentSession();
+		Transaction tx=session.beginTransaction();
+		try {
+			empList=session.createQuery(jpql, Employee.class).
+			setParameter("department",dept).setParameter("sal", minSal).getResultList();
+			tx.commit();
+		}
+		catch(RuntimeException e) {
+			tx.rollback();
+		}
+		return empList;
+	}
+	public String InsertEmpToNewDept(String fn,String ln) 
+	{
+		String jpql="select from emps e where e.firstname=:fn and e.lastname=:ln";
+		Session session=getFactory().getCurrentSession();
+		Transaction tx=session.beginTransaction();
+		try {
+			Employee emp=(Employee) session.createQuery(jpql,Employee.class);
+			tx.commit();
+		}
+		catch(RuntimeException e) {
+			tx.rollback();
+		}
+		
+		return emp;
+		
+	}
 }
